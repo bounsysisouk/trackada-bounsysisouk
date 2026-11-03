@@ -1,11 +1,7 @@
-{
-  "projects": [
-    { "name": "adapage",   "required": ["index.html", "style.css", "README.md"] },
-    { "name": "adaquiz",   "required": ["index.html", "style.css", "script.js", "questions.js", "README.md"] },
-    { "name": "trackada",  "required": ["checktrack.js", "track.json", "package.json", "README.md"] },
-    { "name": "adalgo",    "required": ["package.json", "README.md"] },
-    { "name": "adataviz",  "required": ["index.html", "package.json", "README.md"] },
-    { "name": "adatabase", "required": ["package.json", "README.md"] },
-    { "name": "adapi",     "required": ["package.json", "README.md"] }
-  ]
-}
+import { readFileSync, existsSync } from "fs"
+import { join } from "path"
+import { homedir } from "os"
+const contenu = readFileSync("track.json", "utf-8")
+console.log(contenu)
+const test = JSON.parse(contenu)
+console.log(test)
