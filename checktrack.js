@@ -3,6 +3,7 @@ import { join } from "path"
 import { existsSync, readFileSync } from "fs"
 import readline from "readline"
 
+// ASSEMBLAGE DES ELEMENTS 
 const assemblerAvecEt = (elements) => {
         if (elements.length === 1) {
             return elements[0]
@@ -10,6 +11,7 @@ const assemblerAvecEt = (elements) => {
         const dernier = elements.pop()
         return elements.join(", ") + " et " + dernier
     }
+
 // COULEUR DES TEXTES
 const green = (str) => {
     return "\x1b[32m" + str + "\x1b[0m";
@@ -20,8 +22,8 @@ const red = (str) => {
 const yellow =(str) => {
     return "\x1b[33m" + str + "\x1b[0m";
 } 
-// DEBUT DE LA FONCTION
 
+// DEBUT DE LA FONCTION
 const verifierProjet = () => {
         //----------- CHARGEMENT-----------//
             /* Chemin du fichier track.json */
@@ -99,7 +101,6 @@ const verifierProjet = () => {
         
 
 // POSER UNE QUESTION A L'UTILISATEUR S'IL VEUT COMMENCER LA VERIF//
-
 const rl = readline.createInterface({
   input:  process.stdin,
   output: process.stdout
