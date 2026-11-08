@@ -45,6 +45,7 @@ const verifierProjet = () => {
                 console.log(red(`❌ le dossier est introuvable : ${cheminProjets}`));
                 return
             }
+            console.log("")
             
             //-------VERIFICATION DES PROJETS---------//
             /* Vérifier si les dossiers projets sont au bon endroit et correctement nommés */
@@ -61,7 +62,7 @@ const verifierProjet = () => {
                     erreurs.push("le dossier n'existe pas ou n'est pas nommé corectement")
                 } else {
                     
-                    //3. Vérifier si le projet et un dépot git
+                    //3. Vérifier si le projet est un dépot git
                     const cheminGit = join(cheminProjet, ".git")
                     if (!existsSync(cheminGit)) {
                         erreurs.push("le repository n'est pas initialisé")
@@ -100,7 +101,7 @@ const verifierProjet = () => {
       
         
 
-// POSER UNE QUESTION A L'UTILISATEUR S'IL VEUT COMMENCER LA VERIF//
+// POSER UNE QUESTION A L'UTILISATEUR S'IL VEUT COMMENCER LA VERIF //
 const rl = readline.createInterface({
   input:  process.stdin,
   output: process.stdout
